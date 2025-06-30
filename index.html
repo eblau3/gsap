@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSAP Animation Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="gsap.js" defer></script>
+  <link rel="stylesheet" href="https://unpkg.com/destyle.css@4.0.1/destyle.min.css" />
+  <link rel="stylesheet" href="gsap.css">
+  <style>
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div style="max-width:1000px;width:100%;margin-right:auto;margin-left:auto;">
+    <br>
+    <h1 style="font-size:42px;font-weight:bold;">GSAP Animation Demo</h1>
+    <br>
+    <br>
+    <br>
+    <p data-gsap="slide-horizontal"><img src="https://placehold.jp/300x50.png?text=slide-horizontal"></p>
+    <br><br>
+    <p data-gsap="slide-vertical"><img src="https://placehold.jp/50x300.png?text=slide-vertical"></p>
+    <br>
+    <br>
+    <br>
+    <div data-gsap="text-slide-horizontal" style="font-size:32px;font-weight:bold;">
+      text-slide-horizontal<br>
+      text-slide-horizontal
+    </div>
+    <br>
+    <p data-gsap="text-slide-vertical" style="font-size:32px;font-weight:bold;writing-mode:vertical-rl;">
+      text-slide-vertical<br>
+      text-slide-vertical
+    </p>
+    <br>
+    <br>
+    <br>
+    <p data-gsap="overlay-horizontal" style="font-size:32px;font-weight:bold;"><img src="https://placehold.jp/300x50.png?text=overlay-horizontal"></p>
+    <br>
+    <p data-gsap="overlay-vertical" style="font-size:32px;font-weight:bold;writing-mode:vertical-rl;"><img src="https://placehold.jp/50x300.png?text=overlay-vertical"></p>
+    <br>
+    <br>
+    <br>
+    <p data-gsap="text-overlay-horizontal" style="font-size:32px;font-weight:bold;">
+      text-overlay-horizontal<br>
+      text-overlay-horizontal
+    </p>
+    <br>
+    <p data-gsap="text-overlay-vertical" style="font-size:32px;font-weight:bold;writing-mode:vertical-rl;">
+      text-overlay-vertical<br>
+      text-overlay-vertical
+    </p>
+    <br>
+    <br>
+    <br>
+    <p data-gsap="text-char-up" style="font-size:32px;font-weight:bold;">text-char-up</p>
+    <br>
+    <br>
+    <br>
+    <div data-gsap="text-masked-line">
+      <p style="font-size:32px;font-weight:bold;">text-masked-line</p>
+      <p style="font-size:20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloremque a. Assumenda pariatur obcaecati totam. Quae doloremque esse excepturi, alias eum soluta nemo est veniam, facilis assumenda eaque odio <br>mollitia.</p>
+      <p style="font-size:20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloremque a. Assumenda pariatur obcaecati totam. Quae doloremque esse excepturi, alias eum soluta nemo est veniam, facilis assumenda eaque odio mollitia.</p>
+      <p style="font-size:20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloremque a. Assumenda pariatur obcaecati totam. Quae doloremque esse excepturi, alias eum soluta nemo est veniam, facilis assumenda eaque odio mollitia.</p>
+      <p style="font-size:20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloremque a. Assumenda pariatur obcaecati totam. Quae doloremque esse excepturi, alias eum soluta nemo est veniam, facilis assumenda eaque odio mollitia.</p>
+      <p style="font-size:20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloremque a. Assumenda pariatur obcaecati totam. Quae doloremque esse excepturi, alias eum soluta nemo est veniam, facilis assumenda eaque odio mollitia.</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <p data-gsap="text-slide-horizontal" style="font-size:32px;font-weight:bold;">text-slide-horizontal</p>
+    <div data-gsap="fade-in">
+      <img src="https://placehold.jp/1000x200.png?text=fade-in">
+    </div>
+    <br>
+    <div data-gsap="fade-up">
+      <img src="https://placehold.jp/1000x200.png?text=fade-up">
+    </div>
+    <br>
+    <div data-gsap="fade-down">
+      <img src="https://placehold.jp/1000x200.png?text=fade-down">
+    </div>
+    <br>
+    <div data-gsap="fade-right">
+      <img src="https://placehold.jp/1000x200.png?text=fade-right">
+    </div>
+    <br>
+    <div data-gsap="fade-left">
+      <img src="https://placehold.jp/1000x200.png?text=fade-left">
+    </div>
+    <br>
+    <div data-gsap="fade-up-right">
+      <img src="https://placehold.jp/1000x200.png?text=fade-up-right">
+    </div>
+    <br>
+    <div data-gsap="fade-up-left">
+      <img src="https://placehold.jp/1000x200.png?text=fade-up-left">
+    </div>
+    <br>
+    <div data-gsap="fade-down-right">
+      <img src="https://placehold.jp/1000x200.png?text=fade-down-right">
+    </div>
+    <br>
+    <div data-gsap="fade-down-left">
+      <img src="https://placehold.jp/1000x200.png?text=fade-down-left">
+    </div>
+    <br>
+    <br>
+    <br>
+    <div style="display:flex;gap:16px;">
+      <div data-gsap="parallax">
+        <img src="https://placehold.jp/1000x600.png?text=parallax">
+      </div>
+      <div data-gsap="parallax" data-gsap-distance="100">
+        <img src="https://placehold.jp/1000x600.png?text=parallax">
+      </div>
+      <div data-gsap="parallax" data-gsap-distance="200">
+        <img src="https://placehold.jp/1000x600.png?text=parallax">
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div data-gsap="parallax-bg" style="height:500px;">
+      <img src="https://placehold.jp/1000x600.png?text=parallax-bg">
+    </div>
+  </div>
+</body>
+</html>
