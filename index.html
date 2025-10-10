@@ -4,12 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GSAP Animation Demo</title>
+  <link rel="stylesheet" href="https://unpkg.com/destyle.css@4.0.1/destyle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
   <script src="gsap.js" defer></script>
-  <link rel="stylesheet" href="https://unpkg.com/destyle.css@4.0.1/destyle.min.css" />
-  <link rel="stylesheet" href="gsap.css">
   <style>
     img {
       width: 100%;
@@ -18,7 +17,7 @@
   </style>
 </head>
 <body>
-  <div style="max-width:1000px;width:100%;margin-right:auto;margin-left:auto;">
+  <div style="max-width:1000px;width:100%;margin-right:auto;margin-left:auto;" class="gsap-trigger-firstview">
     <br>
     <h1 style="font-size:42px;font-weight:bold;">GSAP Animation Demo</h1>
     <br>
@@ -60,7 +59,7 @@
     <br>
     <br>
     <br>
-    <p data-gsap="text-char-up" style="font-size:32px;font-weight:bold;">text-char-up</p>
+    <p data-gsap="text-char-up" data-gsap-trigger=".gsap-trigger-firstview" style="font-size:32px;font-weight:bold;">text-char-up + gsap-trigger-firstview</p>
     <br>
     <br>
     <br>

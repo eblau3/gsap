@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       offset: offset,
       distance: parseFloat(el.getAttribute('data-gsap-distance')) || 50,
       color: el.getAttribute('data-gsap-color') || 'skyblue',
-      // stagger: parseFloat(el.getAttribute('data-gsap-stagger')) || 0.05,
+      stagger: parseFloat(el.getAttribute('data-gsap-stagger')) || 0.05,
       triggerEl: triggerEl,
     };
   };
