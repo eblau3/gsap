@@ -9,20 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
    * @returns {Object} 取得した設定値を含むオブジェクト。
    */
   const getGsapAnimationSettings = (el) => {
-    const offsetAttr = el.getAttribute('data-gsap-offset');
-    let offset = 'top 80%';
-
-    if (offsetAttr) {
-      if (offsetAttr.includes(' ')) {
-        offset = offsetAttr;
-      } else {
-        offset = `top ${offsetAttr}`;
-      }
-    }
-
     const triggerSelector = el.getAttribute('data-gsap-trigger');
 
     let triggerEl = el; // デフォルトは要素自身
+
     if (triggerSelector) {
       const foundTrigger = document.querySelector(triggerSelector);
 
@@ -35,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       duration: parseFloat(el.getAttribute('data-gsap-duration')) || 1,
       delay: parseFloat(el.getAttribute('data-gsap-delay')) || 0,
       ease: el.getAttribute('data-gsap-ease') || 'expo.inOut',
-      offset: offset,
+      offset: el.getAttribute('data-gsap-offset') || 'top 80%',
       distance: parseFloat(el.getAttribute('data-gsap-distance')) || 50,
       color: el.getAttribute('data-gsap-color') || 'skyblue',
       stagger: parseFloat(el.getAttribute('data-gsap-stagger')) || 0.05,
@@ -44,6 +34,22 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   //----------------------------------------------------------------------------------------------------
+  
+  /**
+   * toggle-class
+   * スクロール位置に応じて要素にクラスを付加・削除する。
+   * アニメーション自体はCSSのtransitionやanimationで定義する。
+   */
+  const animateToggleClass = (el) => {
+    const settings = getGsapAnimationSettings(el);
+
+    ScrollTrigger.create({
+      trigger: settings.triggerEl,
+      start: settings.offset,
+      onEnter: () => el.classList.add('is-animate'),
+      onLeaveBack: () => el.classList.remove('is-animate'),
+    });
+  };
 
   // --- テキスト表示アニメーション ---
 
@@ -59,7 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollTrigger: {
         trigger: settings.triggerEl,
         start: settings.offset,
-        once: true
+        once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
@@ -92,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
@@ -132,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
       delay: settings.delay,
     });
@@ -176,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
       delay: settings.delay,
     });
@@ -214,6 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
@@ -265,6 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
@@ -328,6 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
       delay: settings.delay,
     });
@@ -396,6 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
       delay: settings.delay,
     });
@@ -451,6 +465,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
@@ -503,7 +518,9 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         scrub: true, // スクロールに厳密に連動
         start: "clamp(top center)",
-        end: "clamp(bottom center)"
+        end: "clamp(bottom center)",
+        once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
@@ -534,6 +551,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
@@ -564,6 +582,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
@@ -600,6 +619,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
@@ -636,6 +656,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
@@ -672,6 +693,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
@@ -708,6 +730,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
@@ -746,6 +769,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
@@ -784,6 +808,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
@@ -822,6 +847,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: settings.triggerEl,
         start: settings.offset,
         once: true,
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
@@ -859,17 +885,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const animateParallax = (el) => {
     const settings = getGsapAnimationSettings(el);
 
-    const timeline = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: settings.triggerEl,
         start: 'top bottom',
         end: 'bottom top',
         scrub: 1, // スクロールに連動
+        onEnter: () => el.classList.add('is-animate'),
       },
     });
 
     // 要素がスクロール領域に入り始めてから出るまでの間、y軸方向に移動
-    timeline.fromTo(el,
+    tl.fromTo(el,
       {
         y: settings.distance,
       },
@@ -894,17 +921,18 @@ document.addEventListener('DOMContentLoaded', () => {
     el.style.overflow = 'hidden'; // 親要素の余分な部分を隠す
     imageEl.style.height = `${100 + y}%`; // 画像の高さに移動できる範囲を確保
 
-    const timeline = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: settings.triggerEl,
         start: 'top bottom',
         end: 'bottom top',
         scrub: 1, // スクロールに連動
+        onEnter: () => el.classList.add('is-active'),
       },
     });
 
     // 画像要素をy軸方向に移動
-    timeline.to(imageEl, {
+    tl.to(imageEl, {
       yPercent: (100 / (100 + y)) * y * -1,
     });
   };
@@ -913,6 +941,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- アニメーションの初期化 ---
   const animationsMap = {
+    'toggle-class': animateToggleClass,
     'slide-horizontal': animateSlideHorizontal,
     'slide-vertical': animateSlideVertical,
     'text-slide-horizontal': animateTextSlideHorizontal,

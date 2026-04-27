@@ -4,131 +4,122 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GSAP Animation Demo</title>
-  <link rel="stylesheet" href="https://unpkg.com/destyle.css@4.0.1/destyle.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="gsap.css">
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
   <script src="gsap.js" defer></script>
-  <style>
-    img {
-      width: 100%;
-      object-fit: cover;
+  <style type="text/tailwindcss">
+    @layer components {
+      img {
+        @apply w-full;
+      }
+
+      h3 {
+        @apply text-7xl font-bold;
+      }
     }
   </style>
 </head>
-<body>
-  <div style="max-width:1000px;width:100%;margin-right:auto;margin-left:auto;" class="gsap-trigger-firstview">
-    <br>
-    <h1 style="font-size:42px;font-weight:bold;">GSAP Animation Demo</h1>
-    <br>
-    <br>
-    <br>
-    <p data-gsap="slide-horizontal"><img src="https://placehold.jp/300x50.png?text=slide-horizontal"></p>
-    <br><br>
-    <p data-gsap="slide-vertical"><img src="https://placehold.jp/50x300.png?text=slide-vertical"></p>
-    <br>
-    <br>
-    <br>
-    <div data-gsap="text-slide-horizontal" style="font-size:32px;font-weight:bold;">
-      text-slide-horizontal<br>
-      text-slide-horizontal
+<body style="position: relative;">
+  <header class="z-40 fixed top-0 left-0 w-full bg-teal-700 h-[90px] flex items-center px-4">
+    <div class="relative top-0 left-0 w-[180px] scale-[2] translate-x-1/2 translate-y-1/2 transition [&.is-animate]:scale-100 [&.is-animate]:translate-x-0 [&.is-animate]:translate-y-0" data-gsap="toggle-class" data-gsap-trigger=".gsap-trigger-mv" data-gsap-offset="bottom 0%">
+      <img class="w-full" src="https://placehold.jp/360x120.png?text=toggle-class" alt="">
     </div>
-    <br>
-    <p data-gsap="text-slide-vertical" style="font-size:32px;font-weight:bold;writing-mode:vertical-rl;">
-      text-slide-vertical<br>
-      text-slide-vertical
-    </p>
-    <br>
-    <br>
-    <br>
-    <p data-gsap="overlay-horizontal" style="font-size:32px;font-weight:bold;"><img src="https://placehold.jp/300x50.png?text=overlay-horizontal"></p>
-    <br>
-    <p data-gsap="overlay-vertical" style="font-size:32px;font-weight:bold;writing-mode:vertical-rl;"><img src="https://placehold.jp/50x300.png?text=overlay-vertical"></p>
-    <br>
-    <br>
-    <br>
-    <p data-gsap="text-overlay-horizontal" style="font-size:32px;font-weight:bold;">
-      text-overlay-horizontal<br>
-      text-overlay-horizontal
-    </p>
-    <br>
-    <p data-gsap="text-overlay-vertical" style="font-size:32px;font-weight:bold;writing-mode:vertical-rl;">
-      text-overlay-vertical<br>
-      text-overlay-vertical
-    </p>
-    <br>
-    <br>
-    <br>
-    <p data-gsap="text-char-up" data-gsap-trigger=".gsap-trigger-firstview" style="font-size:32px;font-weight:bold;">text-char-up + gsap-trigger-firstview</p>
-    <br>
-    <br>
-    <br>
-    <div data-gsap="text-masked-line">
-      <p style="font-size:32px;font-weight:bold;">text-masked-line</p>
-      <p style="font-size:20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloremque a. Assumenda pariatur obcaecati totam. Quae doloremque esse excepturi, alias eum soluta nemo est veniam, facilis assumenda eaque odio <br>mollitia.</p>
-      <p style="font-size:20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloremque a. Assumenda pariatur obcaecati totam. Quae doloremque esse excepturi, alias eum soluta nemo est veniam, facilis assumenda eaque odio mollitia.</p>
-      <p style="font-size:20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloremque a. Assumenda pariatur obcaecati totam. Quae doloremque esse excepturi, alias eum soluta nemo est veniam, facilis assumenda eaque odio mollitia.</p>
-      <p style="font-size:20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloremque a. Assumenda pariatur obcaecati totam. Quae doloremque esse excepturi, alias eum soluta nemo est veniam, facilis assumenda eaque odio mollitia.</p>
-      <p style="font-size:20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloremque a. Assumenda pariatur obcaecati totam. Quae doloremque esse excepturi, alias eum soluta nemo est veniam, facilis assumenda eaque odio mollitia.</p>
-    </div>
-    <br>
-    <br>
-    <br>
-    <p data-gsap="text-slide-horizontal" style="font-size:32px;font-weight:bold;">text-slide-horizontal</p>
-    <div data-gsap="fade-in">
-      <img src="https://placehold.jp/1000x200.png?text=fade-in">
-    </div>
-    <br>
-    <div data-gsap="fade-up">
-      <img src="https://placehold.jp/1000x200.png?text=fade-up">
-    </div>
-    <br>
-    <div data-gsap="fade-down">
-      <img src="https://placehold.jp/1000x200.png?text=fade-down">
-    </div>
-    <br>
-    <div data-gsap="fade-right">
-      <img src="https://placehold.jp/1000x200.png?text=fade-right">
-    </div>
-    <br>
-    <div data-gsap="fade-left">
-      <img src="https://placehold.jp/1000x200.png?text=fade-left">
-    </div>
-    <br>
-    <div data-gsap="fade-up-right">
-      <img src="https://placehold.jp/1000x200.png?text=fade-up-right">
-    </div>
-    <br>
-    <div data-gsap="fade-up-left">
-      <img src="https://placehold.jp/1000x200.png?text=fade-up-left">
-    </div>
-    <br>
-    <div data-gsap="fade-down-right">
-      <img src="https://placehold.jp/1000x200.png?text=fade-down-right">
-    </div>
-    <br>
-    <div data-gsap="fade-down-left">
-      <img src="https://placehold.jp/1000x200.png?text=fade-down-left">
-    </div>
-    <br>
-    <br>
-    <br>
-    <div style="display:flex;gap:16px;">
-      <div data-gsap="parallax">
-        <img src="https://placehold.jp/1000x600.png?text=parallax">
-      </div>
-      <div data-gsap="parallax" data-gsap-distance="100">
-        <img src="https://placehold.jp/1000x600.png?text=parallax">
-      </div>
-      <div data-gsap="parallax" data-gsap-distance="200">
-        <img src="https://placehold.jp/1000x600.png?text=parallax">
-      </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div data-gsap="parallax-bg" style="height:500px;">
-      <img src="https://placehold.jp/1000x600.png?text=parallax-bg">
+  </header>
+  <div class="gsap-trigger-mv">
+    <img src="https://placehold.jp/1920x1080.png" alt="">
+  </div>
+  <div class="max-w-[1000px] w-full mx-auto">
+    <div class="grid grid-cols-1 gap-32 mt-32">
+      <section>
+        <div data-gsap="slide-horizontal"><img src="https://placehold.jp/1000x150.png?text=slide-horizontal"></div>
+        <br>
+        <div data-gsap="slide-vertical"><img src="https://placehold.jp/1000x150.png?text=slide-vertical"></div>
+      </section>
+      <section>
+        <h3 data-gsap="text-slide-horizontal">text-slide-horizontal</h3>
+        <br>
+        <h3 data-gsap="text-slide-vertical">text-slide-vertical</h3>
+      </section>
+      <section>
+        <div data-gsap="overlay-horizontal"><img src="https://placehold.jp/1000x150.png?text=overlay-horizontal"></div>
+        <br>
+        <div data-gsap="overlay-vertical"><img src="https://placehold.jp/1000x150.png?text=overlay-vertical"></div>
+      </section>
+      <section>
+        <h3 data-gsap="text-overlay-horizontal">text-overlay-horizontal</h3>
+        <br>
+        <h3 data-gsap="text-overlay-vertical">text-overlay-vertical</h3>
+      </section>
+      <section>
+        <h3 data-gsap="text-char-up">text-char-up</h3>
+      </section>
+      <section>
+        <div data-gsap="text-masked-line">
+          <h3>text-masked-line</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloremque a. Assumenda pariatur obcaecati totam. Quae doloremque esse excepturi, alias eum soluta nemo est veniam, facilis assumenda eaque odio <br>mollitia.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloremque a. Assumenda pariatur obcaecati totam. Quae doloremque esse excepturi, alias eum soluta nemo est veniam, facilis assumenda eaque odio mollitia.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloremque a. Assumenda pariatur obcaecati totam. Quae doloremque esse excepturi, alias eum soluta nemo est veniam, facilis assumenda eaque odio mollitia.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloremque a. Assumenda pariatur obcaecati totam. Quae doloremque esse excepturi, alias eum soluta nemo est veniam, facilis assumenda eaque odio mollitia.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, doloremque a. Assumenda pariatur obcaecati totam. Quae doloremque esse excepturi, alias eum soluta nemo est veniam, facilis assumenda eaque odio mollitia.</p>
+        </div>
+      </section>
+      <section>
+        <div data-gsap="fade-in">
+          <img src="https://placehold.jp/1000x200.png?text=fade-in">
+        </div>
+        <br>
+        <div data-gsap="fade-up">
+          <img src="https://placehold.jp/1000x200.png?text=fade-up">
+        </div>
+        <br>
+        <div data-gsap="fade-down">
+          <img src="https://placehold.jp/1000x200.png?text=fade-down">
+        </div>
+        <br>
+        <div data-gsap="fade-right">
+          <img src="https://placehold.jp/1000x200.png?text=fade-right">
+        </div>
+        <br>
+        <div data-gsap="fade-left">
+          <img src="https://placehold.jp/1000x200.png?text=fade-left">
+        </div>
+        <br>
+        <div data-gsap="fade-up-right">
+          <img src="https://placehold.jp/1000x200.png?text=fade-up-right">
+        </div>
+        <br>
+        <div data-gsap="fade-up-left">
+          <img src="https://placehold.jp/1000x200.png?text=fade-up-left">
+        </div>
+        <br>
+        <div data-gsap="fade-down-right">
+          <img src="https://placehold.jp/1000x200.png?text=fade-down-right">
+        </div>
+        <br>
+        <div data-gsap="fade-down-left">
+          <img src="https://placehold.jp/1000x200.png?text=fade-down-left">
+        </div>
+      </section>
+      <section>
+        <div style="display:flex;gap:16px;">
+          <div data-gsap="parallax">
+            <img src="https://placehold.jp/1000x600.png?text=parallax">
+          </div>
+          <div data-gsap="parallax" data-gsap-distance="100">
+            <img src="https://placehold.jp/1000x600.png?text=parallax">
+          </div>
+          <div data-gsap="parallax" data-gsap-distance="200">
+            <img src="https://placehold.jp/1000x600.png?text=parallax">
+          </div>
+        </div>
+        <br>
+        <div data-gsap="parallax-bg" class="h-[500px]">
+          <img src="https://placehold.jp/1000x600.png?text=parallax-bg">
+        </div>
+      </section>
     </div>
   </div>
 </body>
